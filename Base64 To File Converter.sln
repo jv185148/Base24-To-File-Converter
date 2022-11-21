@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base64 To File Converter", "Base24 To File Converter\Base64 To File Converter.csproj", "{3414E9DC-CB39-49C3-ADE6-A9375371FC3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base64 To File Converter", "Base64 To File Converter\Base64 To File Converter.csproj", "{3414E9DC-CB39-49C3-ADE6-A9375371FC3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
