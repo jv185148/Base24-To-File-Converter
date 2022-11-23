@@ -41,16 +41,34 @@ namespace Base24_To_File_Converter
 
         private void btnSaveFile_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(fileName))
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "All Files *.*|*.*";
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
-                fileName = Data.GetNewFile(Application.StartupPath);
+                txtFileName.Text = dlg.FileName;
+                fileName = dlg.FileName;
             }
 
-            using(Data data = new Data())
+
+        }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFileName.Text))
             {
-                if (data.SaveFile(fileName))
+                fileName = Data.GetNewFile(Application.StartupPath);
+                txtFileName.Text = fileName;
+            }
+            else
+            {
+                fileName = txtFileName.Text;
+            }
+
+            using (Data data = new Data())
+            {
+                if (data.SaveFile(fileName,txtData.Text))
                 {
-                    OpenFileDialog(fileName);
+                    OpenFile(fileName);
                 }
                 else
                 {
@@ -60,15 +78,19 @@ namespace Base24_To_File_Converter
             }
         }
 
-        private void btnConvert_Click(object sender, EventArgs e)
+        private void OpenFile(string fileName)
         {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "All Files *.*|*.*";
-            if (dlg.ShowDialog() == DialogResult.OK)
+            System.Diagnostics.Process p = new System.Diagnostics.Process()
             {
-                txtFileName.Text = dlg.FileName;
-                fileName = dlg.FileName;
-            }
+                StartInfo = new System.Diagnostics.ProcessStartInfo("Explorer.exe")
+                {
+                    Arguments = fileName
+
+                }
+            };
+
+            p.Start();
+
         }
     }
 }

@@ -41,6 +41,7 @@ namespace Base24_To_File_Converter
             // txtData
             // 
             this.txtData.Location = new System.Drawing.Point(32, 50);
+            this.txtData.MaxLength = 2000000;
             this.txtData.Multiline = true;
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(527, 263);
@@ -51,9 +52,9 @@ namespace Base24_To_File_Converter
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
+            this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Base24 Data";
+            this.label1.Text = "Base64Data";
             // 
             // label2
             // 
@@ -121,7 +122,7 @@ namespace Base24_To_File_Converter
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(615, 537);
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "Base64 Converter...";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.ResumeLayout(false);
